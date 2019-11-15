@@ -23,11 +23,9 @@ public class day7 {
                mylist.add(ID+"\t"+name+"\t"+price+"\t");
             }
             mysql1.con.close();
-            System.out.println(mylist.get(0));
-            System.out.println(mylist.get(1));
-            System.out.println(mylist.get(2));
-            System.out.println(mylist.get(3));
-            System.out.println(mylist.get(4));
+            for (int i=0;i<mylist.size();i++){
+                System.out.println(mylist.get(i));
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
