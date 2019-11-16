@@ -23,8 +23,8 @@ public class day7 {
                mylist.add(ID+"\t"+name+"\t"+price+"\t");
             }
             mysql1.con.close();
-            for (int i=0;i<mylist.size();i++){
-                System.out.println(mylist.get(i));
+            for (String s : mylist) {
+                System.out.println(s);
             }
         } catch (SQLException e) {
             e.printStackTrace();
