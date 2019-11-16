@@ -19,6 +19,7 @@ public class day_music extends Thread{
             System.out.println(e);
         }
     }
+
     @Override
     public void run() {
         try {
@@ -27,5 +28,4 @@ public class day_music extends Thread{
             e.printStackTrace();
         }
     }
-
 }
