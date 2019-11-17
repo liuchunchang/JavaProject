@@ -6,7 +6,7 @@ import javazoom.jl.player.Player;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
 
-public class day_music extends Thread{
+public class day_music extends Thread {
     private String filename;
     public Player player;
 
