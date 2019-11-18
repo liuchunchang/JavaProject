@@ -8,6 +8,12 @@ import java.io.File;
 import java.util.LinkedList;
 
 public class day_Jframe implements ActionListener {
+    public int f;
+    private double width=Toolkit.getDefaultToolkit().getScreenSize().getWidth();
+    private double height=Toolkit.getDefaultToolkit().getScreenSize().getHeight();
+    int x=612,y=395;
+    int x1= (int) ((width-x)/2);
+    int y1= (int) ((height-y)/2);
     private int k = 0;
     private JLabel jLabel;
     private JComboBox jComboBox;
@@ -18,7 +24,7 @@ public class day_Jframe implements ActionListener {
     private ImageIcon icon1, icon2, icon3,icon4;
     private String[] t;
     private String path = "D:\\CloudMusic\\";
-    private String gequ = "D:\\CloudMusic\\没有什么不同.mp3";
+    private String gequ = "";
     private LinkedList<String> list;
     private String[] ico = {"./java/src/images/play.png", "./java/src/images/mute.png",
             "./java/src/images/beijing.jpg","./java/src/images/night.png"};
@@ -40,6 +46,7 @@ public class day_Jframe implements ActionListener {
         for (int i = 0; i < list.size(); i++) {
             t[i] = list.get(i);
         }
+        gequ=path+list.get(0);
     }
 
     private void lister() {
@@ -69,7 +76,8 @@ public class day_Jframe implements ActionListener {
         icon2 = new ImageIcon(temp2);
         button2.setIcon(icon2);
         jComboBox = new JComboBox(t);
-        jComboBox.setBounds(300, 20, 250, 30);
+        jComboBox.setBounds(x/2, 20, x/2-20, 30);
+        jComboBox.setFont(new Font("微软雅黑",Font.PLAIN,15));
         jLabel = new JLabel();
         jLabel.setSize(600, 360);
         icon3 = new ImageIcon(ico[2]);
@@ -83,7 +91,7 @@ public class day_Jframe implements ActionListener {
         container.add(jComboBox);
         container.add(jLabel);
         jFrame.setResizable(false);
-        jFrame.setBounds(300, 100, 612, 395);
+        jFrame.setBounds(x1, y1, x, y);
         jFrame.setVisible(true);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
